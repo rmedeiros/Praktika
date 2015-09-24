@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="tipo_contenido" content="text/html;" http-equiv="content-type" charset="utf-8">
+		<title>Sign Up</title>
+		<link rel="stylesheet" type="text/css" href="stylesPWS/estiloa.css"/>
+		<link rel='stylesheet' 
+		   type='text/css' 
+		   media='only screen and (max-width: 480px)'
+		   href='stylesPWS/smartphone.css' />
+		<script type="text/javascript">
+			function ikusBalioak(){
+				var sAux="";
+				var frm=document.getElementById("erregistro");
+				for(i=0;i<frm.elements.length;i++){
+				sAux +="IZENA: " + frm.elements[i].name+"";
+				sAux +="BALIOA: " + frm.elements[i].value+"\n";
+				}
+			alert(sAux);
+			}
+		</script>
+		<script type="text/javascript">
+			function balidatu(){
+				var x = document.getElementById("erregistro");
+				for(i=0;i<x.elements.length-2;i++){
+					if (x.elements[i].value == null || x.elements[i].value == " ") {
+						alert("All obligatory field must be completed");
+						return false;
+					}
+				}
+				if(!pasahitzaLuz(document.forms["erregistro"]["pasahitza"].value)){
+					alert("Not the corret numbers for the password");
+					return false;
+				}if (!emailBalioztatu(document.forms["erregistro"]["emaila"].value)){
+					alert ("Not the correct email format");
+					return false;
+				}if(!telefBalioztatu(document.forms["erregistro"]["telefonoa"].value)){
+					alert("Not the correct telephone format");
+					return false;
+				}
+				
+			}
+		</script>
+		
+		<script type="text/javascript">
+			function pasahitzaLuz(pass){
+				if(pass.length <6){
+					return false;
+				}
+				return true
+			}
+		</script>
+		
+		<script type="text/javascript">
+			function emailBalioztatu(emaila){
+				var re = new RegExp("[a-z]+[0-9]{3}@ikasle.ehu.e(us|s)");
+				return re.test(emaila);
+			}
+		</script>
+		<script type="text/javascript">
+			function telefBalioztatu(telefonoa){
+				var re = new RegExp("(6|9)[0-9]{8}");
+				return re.test(telefonoa);
+			}
+			
+		</script>
+	</head>
+	<body>
+		<div class ="nav" id="nav">
+			<ul>
+				<li class ="ezkerra"><a href ="layout.html">Home</a></li>
+				<li class ="ezkerra"><a href ="credits.html">Credits</a></li>
+			</ul>
+			<ul>
+				<li class ="eskuina"><a href ="logIn.html">Log In</a></li>
+			</ul>
+		</div>
+		<hr>
+		<div class ="aim" id ="head">
+			<h1>Sign Up</h1>
+		</div>
+	<div>
+		<form id="erregistro" name="erregistro" onSubmit="return balidatu()" >
+			First name *: <br> <input type ='text' name = "izena" required><br><br>
+			Last name *:  <br> <input type ='text' name ="abizena" required><br><br>
+			Mail *: <br> <input type ='email' name ="emaila" required><br><br>
+			Password *: <br><input type ='password' name ="pasahitza" required><br><br>
+			Telephone number *: <br><input type ='text' name ="telefonoa" required><br><br>
+			Specialism *: <br><input type ='radio' name ="espezialitatea" value ="software" checked>Software
+			<input type ='radio' name ="espezialitatea" value ="hardware">Hardware
+			<input type ='radio' name ="espezialitatea" value="computing">Computing
+			<input type="radio" name="espezialitatea" value ="other">Other<br><br>
+			Any interest in technology?: <br><textarea rows="5" col="80">Enter text...</textarea><br><br>
+			<button type="submit" value="Submit">Submit</button>
+			<button type="reset" value="Reset">Reset</button>
+		</form>
+	</div>
+	
+	<div id="footer">
+				<p><a href="http://en.wikipedia.org/wiki/Quiz" target="_blank">What is a Quiz?</a></p>
+				<a href='https://github.com'>Link GITHUB</a>
+				<br>
+			</div>
+		
+	</body>
+</html>
