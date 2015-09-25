@@ -54,3 +54,28 @@ function telefBalioztatu(telefonoa){
 	var re = new RegExp("(6|9)[0-9]{8}");
 	return re.test(telefonoa);
 }
+
+function besteakClick(){
+	var div = document.getElementById("espezialitateak");
+	var input = document.createElement("input");
+	input.type="text"
+	input.name="besteaTextua";
+	div.appendChild(input);
+}
+
+//Argazkia igotzeko
+var loadFile = function(event) {
+	var output = document.getElementById('preview');
+	output.src = URL.createObjectURL(event.target.files[0]);
+};
+
+function tamainaAldatu(irudia,altuera,zabalera){
+	irudia.height=altuera;
+	irudia.width=zabalera;
+}
+
+function borratu(){
+	var irudia = document.getElementById("preview");
+	irudia.height="0";
+	irudia.width="0";
+}

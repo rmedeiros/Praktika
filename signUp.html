@@ -32,13 +32,18 @@
 			Mail *: <br> <input type ='email' name ="emaila" required><br><br>
 			Password *: <br><input type ='password' name ="pasahitza" required><br><br>
 			Telephone number *: <br><input type ='text' name ="telefonoa" required><br><br>
-			Specialism *: <br><input type ='radio' name ="espezialitatea" value ="software" checked>Software
-			<input type ='radio' name ="espezialitatea" value ="hardware">Hardware
-			<input type ='radio' name ="espezialitatea" value="computing">Computing
-			<input type="radio" name="espezialitatea" value ="other">Other<br><br>
-			Any interest in technology?: <br><textarea rows="5" col="80">Enter text...</textarea><br><br>
+			<div id ="espezialitateak">
+				Specialism *: <br><input type ='radio' name ="espezialitatea" value ="software" checked>Software
+				<input type ='radio' name ="espezialitatea" value ="hardware">Hardware
+				<input type ='radio' name ="espezialitatea" value="computing">Computing
+				<input type="radio" name="espezialitatea" id ="espezialitatea" value ="other" onclick="besteakClick()">Other<br>
+			</div>
+			<br>Any interest in technology?: <br><textarea rows="5" col="80">Enter text...</textarea><br><br>
+			<input name="argazkia" id ="igo"type="file" accept="image/*" onchange="loadFile(event)"><br><br>
+			<img id="preview" onLoad="tamainaAldatu(this,150,300)"/><br><br>
+			
 			<button type="submit" value="Submit">Submit</button>
-			<button type="reset" value="Reset">Reset</button>
+			<button type="reset" value="Reset" onclick="borratu()">Reset</button>
 		</form>
 	</div>
 	
