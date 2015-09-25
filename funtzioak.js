@@ -16,6 +16,10 @@ function balidatu(){
 			return false;
 		}
 	}
+	if(!izenaBeteta(document.forms["erregistro"]["izena"].value)){
+		alert("The name must be a string. For example Christian");
+		return false;
+	}
 	if(!pasahitzaLuz(document.forms["erregistro"]["pasahitza"].value)){
 		alert("Not the corret numbers for the password");
 		return false;
@@ -27,6 +31,11 @@ function balidatu(){
 		return false;
 	}
 			
+}
+
+function izenaBeteta(izen){
+	var re=new RegExp("[a-z,A-Z,Ñ,ñ]+");
+	return re.test(izen);
 }
 
 function pasahitzaLuz(pass){
