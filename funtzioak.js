@@ -59,8 +59,18 @@ function besteakClick(){
 	var div = document.getElementById("espezialitateak");
 	var input = document.createElement("input");
 	input.type="text"
+	input.id="textu2"
 	input.name="besteaTextua";
 	div.appendChild(input);
+	var botoia = document.getElementById("espezialitatea");
+	botoia.disabled = true;
+}
+
+function borratuLaukia(){
+	var lauki = document.getElementById("textu2");
+	lauki.parentNode.removeChild(lauki);
+	var botoia = document.getElementById("espezialitatea");
+	botoia.disabled = false;
 }
 
 //Argazkia igotzeko
@@ -79,4 +89,8 @@ function borratu(){
 	var irudia = document.getElementById("preview");
 	irudia.height="0";
 	irudia.width="0";
+	var lauki = document.getElementById("textu2");
+	lauki.parentNode.removeChild(lauki);
+	var botoia = document.getElementById("espezialitatea");
+	botoia.disabled = false;
 }

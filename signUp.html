@@ -33,10 +33,10 @@
 			Password *: <br><input type ='password' name ="pasahitza" required><br><br>
 			Telephone number *: <br><input type ='text' name ="telefonoa" required><br><br>
 			<div id ="espezialitateak">
-				Specialism *: <br><input type ='radio' name ="espezialitatea" value ="software" checked>Software
-				<input type ='radio' name ="espezialitatea" value ="hardware">Hardware
-				<input type ='radio' name ="espezialitatea" value="computing">Computing
-				<input type="radio" name="espezialitatea" id ="espezialitatea" value ="other" onclick="besteakClick()">Other<br>
+				Specialism *: <br><input type ='radio' name ="espezialitatea" value ="software" onclick="borratuLaukia()"checked>Software
+				<input type ='radio' name ="espezialitatea" value ="hardware" onclick="borratuLaukia()">Hardware
+				<input type ='radio' name ="espezialitatea" value="computing" onclick="borratuLaukia()">Computing
+				<input type="radio" name="espezialitatea" id ="espezialitatea" value ="other" onclick="besteakClick()" onreset="borratu()">Other<br>
 			</div>
 			<br>Any interest in technology?: <br><textarea rows="5" col="80">Enter text...</textarea><br><br>
 			<input name="argazkia" id ="igo"type="file" accept="image/*" onchange="loadFile(event)" onreset= "borratu()"><br><br>
