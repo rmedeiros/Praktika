@@ -67,6 +67,7 @@ function besteakClick(){
 var loadFile = function(event) {
 	var output = document.getElementById('preview');
 	output.src = URL.createObjectURL(event.target.files[0]);
+	output.style.paddingBottom="10px";
 };
 
 function tamainaAldatu(irudia,altuera,zabalera){

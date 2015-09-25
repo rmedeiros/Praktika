@@ -39,9 +39,8 @@
 				<input type="radio" name="espezialitatea" id ="espezialitatea" value ="other" onclick="besteakClick()">Other<br>
 			</div>
 			<br>Any interest in technology?: <br><textarea rows="5" col="80">Enter text...</textarea><br><br>
-			<input name="argazkia" id ="igo"type="file" accept="image/*" onchange="loadFile(event)"><br><br>
-			<img id="preview" onLoad="tamainaAldatu(this,150,300)"/><br><br>
-			
+			<input name="argazkia" id ="igo"type="file" accept="image/*" onchange="loadFile(event)" onreset= "borratu()"><br><br>
+			<img id="preview" onLoad="tamainaAldatu(this,150,300)"/><br>
 			<button type="submit" value="Submit">Submit</button>
 			<button type="reset" value="Reset" onclick="borratu()">Reset</button>
 		</form>
