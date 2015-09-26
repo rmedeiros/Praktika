@@ -12,7 +12,7 @@ function balidatu(){
 	var x = document.getElementById("erregistro");
 	for(i=0;i<x.elements.length-2;i++){
 		if (x.elements[i].value == null || x.elements[i].value == " ") {
-			alert("All obligatory field must be completed");
+			alert("All obligatory field must be completed.");
 			return false;
 		}
 	}
@@ -21,13 +21,13 @@ function balidatu(){
 		return false;
 	}
 	if(!pasahitzaLuz(document.forms["erregistro"]["pasahitza"].value)){
-		alert("Not the corret numbers for the password");
+		alert("The password needs at least 6 numbers.");
 		return false;
 	}if (!emailBalioztatu(document.forms["erregistro"]["emaila"].value)){
-		alert ("Not the correct email format");
+		alert ("Not the correct email format. Here an example: name001@ikasle.ehu.es");
 		return false;
 	}if(!telefBalioztatu(document.forms["erregistro"]["telefonoa"].value)){
-		alert("Not the correct telephone format");
+		alert("Not the correct telephone format. The telephone must star with 6 or 9 and have 9 digits.");
 		return false;
 	}
 			
