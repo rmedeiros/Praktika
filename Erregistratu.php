@@ -1,5 +1,5 @@
 <?php
-$link = mysql_connect("mysql.hostinger.es","u526113874_rb15","") or die(mysql_error());
+$link = mysql_connect("mysql.hostinger.es","u526113874_rb15","123456789") or die(mysql_error());
 mysql_select_db("u526113874_quiz") or die(mysql_error());
 $sql = "INSERT INTO erabiltzaile (izena, abizena, pasahitza, email, telefonoa, espezialitatea, interesa) VALUES ('$_POST[izena]','$_POST[abizena]','$_POST[pasahitza]','$_POST[emaila]','$_POST[telefonoa]','$_POST[espezialitatea]','$_POST[interesa]')";
 if (!mysql_query($sql))

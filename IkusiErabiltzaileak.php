@@ -1,5 +1,5 @@
 <?php 
-mysql_connect("mysql.hostinger.es","u526113874_rb15","") or die(mysql_error());
+mysql_connect("mysql.hostinger.es","u526113874_rb15","123456789") or die(mysql_error());
 mysql_select_db("u526113874_quiz") or die(mysql_error());
 
 $erabiltzaileak = mysql_query("select * from Erabiltzaile");
