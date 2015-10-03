@@ -30,7 +30,6 @@ function balidatu(){
 		alert("Not the correct telephone format. The telephone must star with 6 or 9 and have 9 digits.");
 		return false;
 	}
-			
 }
 
 function izenaBeteta(izen){
@@ -91,6 +90,11 @@ function borratu(){
 	irudia.width="0";
 	var lauki = document.getElementById("textu2");
 	lauki.parentNode.removeChild(lauki);
+	var botoia = document.getElementById("espezialitatea");
+	botoia.disabled = false;
+}
+
+function desblokeatu(){
 	var botoia = document.getElementById("espezialitatea");
 	botoia.disabled = false;
 }
