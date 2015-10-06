@@ -5,6 +5,9 @@ mysql_select_db("quiz") or die(mysql_error());
 $esp = $_POST['espezialitatea'];
 if ($esp == 'other'){
 	$esp = $_POST['besteaTextua'];
+	if ($esp == ''){
+		$esp = "N/A";
+	}
 }
 
 $sql = "INSERT INTO erabiltzaile (izena, abizena, pasahitza, email, telefonoa, espezialitatea, interesa) VALUES ('$_POST[izena]','$_POST[abizena]','$_POST[pasahitza]','$_POST[emaila]','$_POST[telefonoa]','$esp','$_POST[interesa]')";
@@ -33,7 +36,6 @@ echo " <html>
 if (!mysql_query($sql))
 {
 	die("<p>An error happened: ".mysql_error()."</p>");
-	echo "</div></body></html>";
 }
 //html estiloa jarri:
 
