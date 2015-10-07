@@ -9,8 +9,17 @@ if ($esp == 'other'){
 		$esp = "N/A";
 	}
 }
+$file= $_FILES['image']['tmp_name'];
 
-$sql = "INSERT INTO erabiltzaile (izena, abizena, pasahitza, email, telefonoa, espezialitatea, interesa,argazkia) VALUES ('$_POST[izena]','$_POST[abizena]','$_POST[pasahitza]','$_POST[emaila]','$_POST[telefonoa]','$esp','$_POST[interesa]','$_POST[argazkia]')";
+if(!isset($file))
+	echo "Argazkirik gabeko erabiltzailea";
+else
+	{
+		$image= addslashes(file_get_contents($_FILES['image']['tmp_name']));
+		$image_name= addslashes($_FILES['image']['name']);
+	}
+	
+$sql = "INSERT INTO erabiltzaile (izena, abizena, pasahitza, email, telefonoa, espezialitatea, interesa,argazkia,argazkiMota) VALUES ('$_POST[izena]','$_POST[abizena]','$_POST[pasahitza]','$_POST[emaila]','$_POST[telefonoa]','$esp','$_POST[interesa]','$image','$image_name')";
 echo " <html>
 	<head>
 		<meta name='tipo_contenido' content='text/html;' http-equiv='content-type' charset='utf-8'>

@@ -7,7 +7,9 @@ echo "<table border = 1><tr><th>Izena</th><th>Abizena</th><th>Emaila</th><th>Esp
 
 while($row = mysql_fetch_array($erabiltzaileak)){
 	echo "<tr><td>".$row['izena']."</td><td>".$row['abizena']."</td><td>".$row['email']."</td><td>".$row['espezialitatea']."</td><td>".$row['interesa']."</td>";
-	echo "<td> <img src="data:image/jpeg;base64,'.base64_encode( $result['argazkia'] ).'"/></td></tr>";
+	echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $row['argazkia'] ).'" width="100" height="100"/></td></tr>';
+
+	
 }
 echo "</table>"
 ?>
